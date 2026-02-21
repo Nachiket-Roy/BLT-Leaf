@@ -5,6 +5,9 @@ from js import Response, URL
 # Import database initialization
 from database import init_database_schema
 
+# Import PostHog for error tracking
+from posthog import capture_exception
+
 # Import all handlers
 from handlers import (
     handle_add_pr,
@@ -24,6 +27,25 @@ from handlers import (
 
 async def on_fetch(request, env):
     """Main request handler"""
+    try:
+        return await _handle_request(request, env)
+    except Exception as e:
+        # Capture unexpected errors to PostHog before re-raising
+        try:
+            url = URL.new(request.url)
+            await capture_exception(env, e, context={
+                "path": url.pathname,
+                "method": request.method,
+            })
+        except Exception:
+            pass  # Never let PostHog break the error response
+        return Response.new(
+            'Internal Server Error',
+            {'status': 500}
+        )
+
+async def _handle_request(request, env):
+    """Main request handler (inner)"""
     url = URL.new(request.url)
     path = url.pathname
     

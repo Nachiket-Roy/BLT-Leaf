@@ -5,6 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PR Readiness Checker - BLT-Leaf</title>
+
+    <!-- PostHog Analytics -->
+    <script>
+        !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister opt_out_capturing has_opted_out_capturing opt_in_capturing reset isFeatureEnabled getFeatureFlag getFeatureFlagPayload reloadFeatureFlags group identify setPersonProperties setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags resetGroups onFeatureFlags addFeatureFlagsHandler onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+        posthog.init('phc_6zcge4gdk45UiDxWSVbOq9Fxv6sIG2g8Bg0dj40MuzF', {
+            api_host: 'https://us.i.posthog.com',
+            defaults: '2026-01-30'
+        })
+    </script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://cdn.tailwindcss.com">
@@ -40,12 +49,14 @@
 
         /* Active PR row highlighting */
         .pr-row-active {
-            background-color: #ffe4e6 !important; /* light red tint */
+            background-color: #ffe4e6 !important;
+            /* light red tint */
             border-left: 3px solid #ef4444;
         }
 
         .dark .pr-row-active {
-            background-color: rgba(220, 38, 38, 0.18) !important; /* soft red glow */
+            background-color: rgba(220, 38, 38, 0.18) !important;
+            /* soft red glow */
             border-left: 3px solid #ef4444;
         }
 
@@ -56,51 +67,68 @@
 
         /* Body and main containers */
         .dark body {
-            background-color: #0f172a !important; /* slate-900 */
-            color: #f1f5f9 !important; /* slate-100 */
+            background-color: #0f172a !important;
+            /* slate-900 */
+            color: #f1f5f9 !important;
+            /* slate-100 */
         }
 
         /* Header */
         .dark header {
-            background-color: #1e293b !important; /* slate-800 */
-            border-color: #334155 !important; /* slate-700 */
+            background-color: #1e293b !important;
+            /* slate-800 */
+            border-color: #334155 !important;
+            /* slate-700 */
         }
 
         /* Sidebar */
         .dark aside {
-            background-color: #1e293b !important; /* slate-800 */
-            border-color: #334155 !important; /* slate-700 */
+            background-color: #1e293b !important;
+            /* slate-800 */
+            border-color: #334155 !important;
+            /* slate-700 */
         }
 
         /* Cards and main content areas */
-        .dark main > div,
+        .dark main>div,
         .dark .bg-white {
-            background-color: #1e293b !important; /* slate-800 */
+            background-color: #1e293b !important;
+            /* slate-800 */
         }
 
         /* Text colors */
-        .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4,
+        .dark h5,
+        .dark h6 {
             color: #ffffff !important;
         }
 
         .dark .text-slate-900 {
-            color: #f1f5f9 !important; /* slate-100 */
+            color: #f1f5f9 !important;
+            /* slate-100 */
         }
 
         .dark .text-slate-700 {
-            color: #cbd5e1 ; /* slate-300 */
+            color: #cbd5e1;
+            /* slate-300 */
         }
 
         .dark .text-slate-600 {
-            color: #cbd5e1 !important; /* slate-300 */
+            color: #cbd5e1 !important;
+            /* slate-300 */
         }
 
         .dark .text-slate-500 {
-            color: #94a3b8 !important; /* slate-400 */
+            color: #94a3b8 !important;
+            /* slate-400 */
         }
 
         .dark .text-slate-400 {
-            color: #94a3b8 !important; /* slate-400 */
+            color: #94a3b8 !important;
+            /* slate-400 */
         }
 
         /* Inputs and form elements */
@@ -111,151 +139,183 @@
         .dark input[type="url"],
         .dark textarea,
         .dark select {
-            background-color: #0f172a !important; /* slate-900 */
+            background-color: #0f172a !important;
+            /* slate-900 */
             color: #ffffff !important;
             border-color: #e74c3c !important;
         }
 
         .dark input::placeholder,
         .dark textarea::placeholder {
-            color: #94a3b8 !important; /* slate-400 */
+            color: #94a3b8 !important;
+            /* slate-400 */
         }
 
         .dark input:focus,
         .dark textarea:focus,
         .dark select:focus {
-            border-color: #ef4444 !important; /* red-500 */
+            border-color: #ef4444 !important;
+            /* red-500 */
             outline: none;
         }
 
         /* Buttons */
         .dark button:not(.bg-red-600):not([class*="bg-red"]):not([class*="bg-slate-500"]):not([class*="bg-green"]):not([class*="bg-blue"]) {
-            background-color: #475569 !important; /* slate-600 */
+            background-color: #475569 !important;
+            /* slate-600 */
             color: #f1f5f9 !important;
         }
 
         .dark button:hover:not(.bg-red-600):not([class*="bg-red"]):not([class*="bg-slate-500"]):not([class*="bg-green"]):not([class*="bg-blue"]) {
-            background-color: #334155 !important; /* slate-700 */
+            background-color: #334155 !important;
+            /* slate-700 */
         }
 
         /* Tables */
         .dark table {
-            border-color: #334155 !important; /* slate-700 */
+            border-color: #334155 !important;
+            /* slate-700 */
         }
 
         .dark th {
-            background-color: #1e293b !important; /* slate-800 */
+            background-color: #1e293b !important;
+            /* slate-800 */
             color: #f1f5f9 !important;
             border-color: #334155 !important;
         }
 
         .dark td {
-            border-color: #334155 !important; /* slate-700 */
-            color: #e2e8f0 !important; /* slate-200 */
+            border-color: #334155 !important;
+            /* slate-700 */
+            color: #e2e8f0 !important;
+            /* slate-200 */
         }
 
         .dark tr:hover {
-            background-color: #334155 !important; /* slate-700 */
+            background-color: #334155 !important;
+            /* slate-700 */
         }
 
         /* Borders */
         .dark .border,
         .dark [class*="border-"] {
-            border-color: #334155 !important; /* slate-700 */
+            border-color: #334155 !important;
+            /* slate-700 */
         }
 
         .dark .border-slate-200 {
-            border-color: #334155 !important; /* slate-700 */
+            border-color: #334155 !important;
+            /* slate-700 */
         }
 
-        .dark .divide-y > * {
-            border-color: #334155 !important; /* slate-700 */
+        .dark .divide-y>* {
+            border-color: #334155 !important;
+            /* slate-700 */
         }
 
         /* Hover states */
         .dark .hover\:bg-slate-100:hover,
         .dark [class*="hover:bg-slate-100"]:hover {
-            background-color: #334155 !important; /* slate-700 */
+            background-color: #334155 !important;
+            /* slate-700 */
         }
 
         .dark .hover\:bg-slate-50:hover {
-            background-color: #1e293b !important; /* slate-800 */
+            background-color: #1e293b !important;
+            /* slate-800 */
         }
 
         /* Status badges and alerts */
         .dark .bg-slate-50 {
-            background-color: #0f172a !important; /* slate-900 */
+            background-color: #0f172a !important;
+            /* slate-900 */
         }
 
         .dark .bg-slate-100 {
-            background-color: #1e293b !important; /* slate-800 */
+            background-color: #1e293b !important;
+            /* slate-800 */
         }
 
         .dark .bg-slate-200 {
-            background-color: #334155 !important; /* slate-700 */
+            background-color: #334155 !important;
+            /* slate-700 */
         }
 
         /* Special background colors for status indicators */
         .dark .bg-green-50 {
-            background-color: rgba(6, 78, 59, 0.3) !important; /* emerald-950/30 */
+            background-color: rgba(6, 78, 59, 0.3) !important;
+            /* emerald-950/30 */
         }
 
         .dark .bg-red-50 {
-            background-color: rgba(69, 10, 10, 0.3) !important; /* red-950/30 */
+            background-color: rgba(69, 10, 10, 0.3) !important;
+            /* red-950/30 */
         }
 
         .dark .bg-amber-50,
         .dark .bg-yellow-50 {
-            background-color: rgba(69, 26, 3, 0.3) !important; /* amber-950/30 */
+            background-color: rgba(69, 26, 3, 0.3) !important;
+            /* amber-950/30 */
         }
 
         /* Text colors for status indicators */
         .dark .text-green-700,
         .dark .text-green-600 {
-            color: #4ade80 !important; /* green-400 */
+            color: #4ade80 !important;
+            /* green-400 */
         }
 
         .dark .text-emerald-700,
         .dark .text-emerald-600 {
-            color: #34d399 !important; /* emerald-400 */
+            color: #34d399 !important;
+            /* emerald-400 */
         }
 
         .dark .text-red-700,
         .dark .text-red-600 {
-            color: #f87171 !important; /* red-400 */
+            color: #f87171 !important;
+            /* red-400 */
         }
 
         .dark .text-amber-700,
         .dark .text-amber-600,
         .dark .text-yellow-700 {
-            color: #fbbf24 !important; /* amber-400 */
+            color: #fbbf24 !important;
+            /* amber-400 */
         }
 
         .dark .text-orange-700,
         .dark .text-orange-600 {
-            color: #fb923c !important; /* orange-400 */
+            color: #fb923c !important;
+            /* orange-400 */
         }
 
         .dark .text-blue-700,
         .dark .text-blue-600 {
-            color: #60a5fa !important; /* blue-400 */
+            color: #60a5fa !important;
+            /* blue-400 */
         }
 
         /* Links */
         .dark a {
-            color: #60a5fa !important; /* blue-400 */
+            color: #60a5fa !important;
+            /* blue-400 */
         }
 
         .dark a:hover {
-            color: #93c5fd !important; /* blue-300 */
+            color: #93c5fd !important;
+            /* blue-300 */
         }
 
         /* Disabled states */
         .dark button:disabled,
         .dark input:disabled {
-            background-color: #450a0a !important; /* red-950 */
-            border-color: #991b1b !important; /* red-800 */
-            color: #f87171 !important; /* red-400 */
+            background-color: #450a0a !important;
+            /* red-950 */
+            border-color: #991b1b !important;
+            /* red-800 */
+            color: #f87171 !important;
+            /* red-400 */
             opacity: 0.6;
         }
 
@@ -272,21 +332,21 @@
         .dark ::-webkit-scrollbar-thumb:hover {
             background-color: #64748b;
         }
-        
+
         /* Mobile autocomplete dropdown - responsive fallback */
         #repoList {
             display: none;
         }
-        
+
         .mobile-repo-search {
             display: block;
         }
-        
+
         @media (min-width: 768px) {
             #repoList {
                 display: block;
             }
-            
+
             .mobile-repo-search {
                 display: none;
             }
@@ -305,16 +365,16 @@
                         <img width="20" src="./static/logo.png" alt="Logo" onerror="this.style.display='none'" />
                         <h1 class="text-xs font-bold text-slate-900 dark:text-white">BLT-LEAF</h1>
                     </a>
-                    
+
                     <div class="flex items-center gap-1.5">
-                        <button id="autoRefreshToggle"
+                        <button id="autoRefreshToggle-mobile"
                             class="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700"
                             title="Toggle auto-refresh">
-                            <i class="fas fa-sync-alt text-xs" id="autoRefreshIcon"></i>
+                            <i class="fas fa-sync-alt text-xs" id="autoRefreshIcon-mobile"></i>
                         </button>
-                        <button id="themeToggle"
+                        <button id="themeToggle-mobile"
                             class="rounded-lg p-1.5 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700">
-                            <i class="fas fa-moon text-xs" id="themeIcon"></i>
+                            <i class="fas fa-moon text-xs" id="themeIcon-mobile"></i>
                         </button>
                         <a href="/how-it-works.html"
                             class="inline-flex items-center rounded-lg p-1.5 text-slate-700 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-700"
@@ -322,20 +382,19 @@
                             <i class="fas fa-question-circle text-xs"></i>
                         </a>
                         <a href="https://github.com/OWASP-BLT/BLT-Leaf" target="_blank" rel="noopener noreferrer"
-                            class="rounded-lg bg-red-600 p-1.5 text-white hover:bg-red-700"
-                            title="Contribute">
+                            class="rounded-lg bg-red-600 p-1.5 text-white hover:bg-red-700" title="Contribute">
                             <i class="fab fa-github text-xs"></i>
                         </a>
                     </div>
                 </div>
-                
+
                 <!-- Second line: Search bar and API limit -->
                 <div class="flex items-center gap-1.5">
                     <div class="relative flex-1">
                         <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2">
                             <i class="fas fa-search text-slate-400 text-xs"></i>
                         </div>
-                        <input type="text" id="prSearchInput"
+                        <input type="text" id="prSearchInput-mobile"
                             class="block w-full rounded-md border border-[#e74c3c] bg-slate-50 py-1.5 pl-7 pr-2 text-xs text-slate-900 placeholder:text-slate-500 dark:border-[#e74c3c] dark:bg-slate-900 dark:text-white dark:placeholder:text-slate-400"
                             placeholder="Search PRs..." autocomplete="off">
                     </div>
@@ -358,9 +417,11 @@
                         <h1 class="text-sm font-bold text-slate-900 dark:text-white sm:text-base">BLT-LEAF</h1>
                     </a>
 
-                    <div class="flex items-center gap-1 sm:gap-2 pl-3 sm:pl-4 border-l border-slate-200 dark:border-slate-700 h-8">
+                    <div
+                        class="flex items-center gap-1 sm:gap-2 pl-3 sm:pl-4 border-l border-slate-200 dark:border-slate-700 h-8">
                         <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400">API Limit:</span>
-                        <div class="rate-limit-bar h-1.5 w-20 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                        <div
+                            class="rate-limit-bar h-1.5 w-20 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
                             <div class="h-full w-0 rounded-full bg-green-500 transition-all duration-300"
                                 id="rateLimitFill"></div>
                         </div>
@@ -368,6 +429,7 @@
                             id="rateLimitText">N/A</span>
                         <span class="text-[10px] text-slate-400 dark:text-slate-500" id="rateLimitUsed"></span>
                         <span class="text-[10px] text-slate-400 dark:text-slate-500" id="rateLimitReset"></span>
+                        <span class="text-[10px] font-medium hidden" id="rateLimitTokenIndicator"></span>
                     </div>
                 </div>
 
@@ -408,8 +470,7 @@
                         <i class="fas fa-question-circle"></i>
                         <span class="hidden sm:inline">How It Works</span>
                     </a>
-                    <span id="releaseVersion"
-                        class="text-xs text-slate-500 dark:text-slate-400 inline-block"></span>
+                    <span id="releaseVersion" class="text-xs text-slate-500 dark:text-slate-400 inline-block"></span>
                     <a href="https://github.com/OWASP-BLT/BLT-Leaf" target="_blank" rel="noopener noreferrer"
                         class="rounded-lg bg-red-600 px-2 sm:px-3 py-2 text-sm font-semibold text-white hover:bg-red-700 inline-flex items-center gap-2 transition-colors shadow-sm"
                         title="Contribute">
@@ -424,32 +485,35 @@
         <aside
             class="w-full border-b border-slate-200 bg-white md:w-72 md:border-b-0 md:border-r dark:border-slate-700 dark:bg-slate-800">
             <div class="p-4">
-                <h2 class="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">Repositories <span id="repoCountDisplay"></span></h2>
-                
+                <h2 class="mb-3 text-xs font-semibold uppercase tracking-[0.12em] text-slate-500 dark:text-slate-400">
+                    Repositories <span id="repoCountDisplay"></span></h2>
+
                 <!-- Mobile: Dropdown with search -->
                 <div class="mobile-repo-search mb-2 md:hidden">
                     <div class="relative">
                         <button type="button" id="repoDropdownButton"
                             class="w-full flex items-center justify-between rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 hover:bg-slate-50 focus:border-[#E10000] focus:outline-none focus:ring-2 focus:ring-[#ffe3e3] dark:border-slate-600 dark:bg-slate-700 dark:text-slate-100 dark:hover:bg-slate-600 dark:focus:ring-red-900/50">
                             <span id="repoDropdownText" class="truncate">Select repository...</span>
-                            <svg class="ml-2 h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            <svg class="ml-2 h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
-                        
+
                         <!-- Dropdown menu -->
-                        <div id="repoDropdownMenu" class="hidden absolute z-10 mt-1 w-full rounded-lg border border-slate-300 bg-white shadow-lg dark:border-slate-600 dark:bg-slate-700">
+                        <div id="repoDropdownMenu"
+                            class="hidden absolute z-10 mt-1 w-full rounded-lg border border-slate-300 bg-white shadow-lg dark:border-slate-600 dark:bg-slate-700">
                             <div class="p-2 border-b border-slate-200 dark:border-slate-600">
                                 <input type="text" id="repoSearchInput"
                                     class="w-full rounded-md border border-slate-300 bg-white px-2 py-1.5 text-sm text-slate-900 placeholder:text-slate-400 focus:border-[#E10000] focus:outline-none focus:ring-1 focus:ring-[#E10000] dark:border-slate-500 dark:bg-slate-600 dark:text-slate-100 dark:placeholder:text-slate-400"
-                                    placeholder="Search repositories..."
-                                    autocomplete="off" />
+                                    placeholder="Search repositories..." autocomplete="off" />
                             </div>
                             <div id="repoDropdownList" class="max-h-60 overflow-y-auto"></div>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Desktop: List view -->
                 <ul id="repoList" class="space-y-2">
                     <li class="repo-item active cursor-pointer rounded-lg border border-[#f5b0b0] bg-[#fff1f1] px-3 py-2 dark:border-red-900 dark:bg-red-950/30"
@@ -497,25 +561,31 @@
     </div>
 
     <!-- Raw Data Modal -->
-    <div id="rawDataModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-        <div class="relative w-full max-w-4xl max-h-[90vh] m-4 bg-white dark:bg-slate-800 rounded-lg shadow-2xl flex flex-col">
+    <div id="rawDataModal"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+        <div
+            class="relative w-full max-w-4xl max-h-[90vh] m-4 bg-white dark:bg-slate-800 rounded-lg shadow-2xl flex flex-col">
             <!-- Modal Header -->
             <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700">
                 <h2 class="text-xl font-semibold text-slate-900 dark:text-slate-100">Raw PR Data</h2>
-                <button id="closeRawDataModal" class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700 transition-colors">
+                <button id="closeRawDataModal"
+                    class="rounded-lg p-2 text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-700 transition-colors">
                     <i class="fas fa-times"></i>
                 </button>
             </div>
             <!-- Modal Body -->
             <div class="flex-1 overflow-auto px-6 py-4">
-                <pre id="rawDataContent" class="text-xs text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-900 p-4 rounded-lg overflow-x-auto"><code></code></pre>
+                <pre id="rawDataContent"
+                    class="text-xs text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-slate-900 p-4 rounded-lg overflow-x-auto"><code></code></pre>
             </div>
             <!-- Modal Footer -->
             <div class="flex items-center justify-end gap-3 px-6 py-4 border-t border-slate-200 dark:border-slate-700">
-                <button id="copyRawDataBtn" class="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition-colors shadow-sm">
+                <button id="copyRawDataBtn"
+                    class="rounded-md bg-red-600 px-4 py-2 text-sm font-semibold text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400 transition-colors shadow-sm">
                     <i class="fas fa-copy mr-1"></i>Copy to Clipboard
                 </button>
-                <button id="closeRawDataModalBtn" class="rounded-md bg-slate-500 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 transition-colors shadow-sm">
+                <button id="closeRawDataModalBtn"
+                    class="rounded-md bg-slate-500 px-4 py-2 text-sm font-semibold text-white hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-400 transition-colors shadow-sm">
                     Close
                 </button>
             </div>
@@ -687,10 +757,26 @@
                 const fillEl = document.getElementById('rateLimitFill');
                 const usedEl = document.getElementById('rateLimitUsed');
                 const resetEl = document.getElementById('rateLimitReset');
+                const tokenEl = document.getElementById('rateLimitTokenIndicator');
 
                 if (!response.ok) return;
 
                 const data = await response.json();
+
+                // Show token indicator regardless of rate limit status
+                if (tokenEl) {
+                    if (data.token_configured) {
+                        tokenEl.textContent = '🔑';
+                        tokenEl.title = 'GitHub token configured (higher rate limits)';
+                        tokenEl.setAttribute('aria-label', 'GitHub token configured');
+                        tokenEl.classList.remove('hidden');
+                    } else {
+                        tokenEl.textContent = '⚠';
+                        tokenEl.title = 'No GitHub token configured (lower rate limits)';
+                        tokenEl.setAttribute('aria-label', 'No GitHub token configured');
+                        tokenEl.classList.remove('hidden');
+                    }
+                }
 
                 if (data.status === 'waiting_for_first_request') {
                     if (textEl) textEl.textContent = 'Ready';
@@ -758,9 +844,11 @@
                 const textEl = document.getElementById('rateLimitText');
                 const usedEl = document.getElementById('rateLimitUsed');
                 const resetEl = document.getElementById('rateLimitReset');
+                const tokenEl = document.getElementById('rateLimitTokenIndicator');
                 if (textEl) textEl.textContent = 'N/A';
                 if (usedEl) usedEl.textContent = '';
                 if (resetEl) resetEl.textContent = '';
+                if (tokenEl) tokenEl.classList.add('hidden');
             }
         }
 
@@ -999,6 +1087,14 @@
                     </div>
                 `;
 
+                const addAllBtn = li.querySelector('.add-all-prs-btn');
+                if (addAllBtn) {
+                    addAllBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        addAllPrsFromRepo(repo.repo_owner, repo.repo_name, addAllBtn);
+                    });
+                }
+
                 li.addEventListener('click', () => {
                     currentPage = 1;
                     currentRepo = li.dataset.repo;
@@ -1016,14 +1112,14 @@
         function updateMobileDropdown(searchTerm = '') {
             const dropdownList = document.getElementById('repoDropdownList');
             if (!dropdownList) return;
-            
+
             dropdownList.innerHTML = '';
-            
+
             // Filter repos based on search term
-            const filteredRepos = searchTerm 
+            const filteredRepos = searchTerm
                 ? repos.filter(r => `${r.repo_owner}/${r.repo_name}`.toLowerCase().includes(searchTerm.toLowerCase()))
                 : repos;
-            
+
             // Add "All Repositories" option
             const allDiv = document.createElement('div');
             allDiv.className = 'px-3 py-2 text-sm cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-600';
@@ -1038,7 +1134,7 @@
             `;
             allDiv.addEventListener('click', () => selectRepo('all'));
             dropdownList.appendChild(allDiv);
-            
+
             // Add individual repositories
             filteredRepos.forEach(repo => {
                 const div = document.createElement('div');
@@ -1054,7 +1150,7 @@
                 div.addEventListener('click', () => selectRepo(div.dataset.repo));
                 dropdownList.appendChild(div);
             });
-            
+
             // Show "No results" if search returns nothing
             if (searchTerm && filteredRepos.length === 0 && !searchTerm.toLowerCase().includes('all')) {
                 const noResults = document.createElement('div');
@@ -1127,7 +1223,7 @@
                 }
 
                 const response = await fetch(url);
-                
+
                 // Check if the HTTP request was successful
                 if (!response.ok) {
                     let errorMessage = 'Failed to load PRs';
@@ -1206,7 +1302,7 @@
                 }
             } catch (error) {
                 console.error('Error loading PRs:', error);
-                
+
                 // Provide more specific error messages
                 let errorMessage = 'Failed to load PRs';
                 if (error.name === 'TypeError' && error.message.includes('fetch')) {
@@ -1219,7 +1315,7 @@
                     // Show the actual error message if available
                     errorMessage = `Error: ${error.message}`;
                 }
-                
+
                 showContainerError('prListContainer', errorMessage);
             }
         }
@@ -1407,18 +1503,18 @@
         function showRawDataModal(prId) {
             const modal = document.getElementById('rawDataModal');
             const content = document.getElementById('rawDataContent').querySelector('code');
-            
+
             // Find the specific PR data
             const prData = allPrs.find(pr => pr.id === prId);
-            
+
             if (!prData) {
                 console.error('PR not found:', prId);
                 return;
             }
-            
+
             // Format as pretty JSON
             content.textContent = JSON.stringify(prData, null, 2);
-            
+
             // Show modal
             modal.classList.remove('hidden');
             document.body.style.overflow = 'hidden';
@@ -1718,14 +1814,14 @@
                     await updatePr(prId, e.currentTarget);
                 });
             });
-            
+
             document.querySelectorAll('.view-raw-btn').forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     const prId = parseInt(e.currentTarget.dataset.prId, 10);
                     showRawDataModal(prId);
                 });
             });
-            
+
             if (document.getElementById('prSearchInput').value.trim() === '') {
                 renderPagination();
             }
@@ -1799,18 +1895,18 @@
                     loadPrs();
                 }
             });
-            
+
             // Handle page size change
             document.getElementById('pageSizeSelect')?.addEventListener('change', (e) => {
                 const newPerPage = parseInt(e.target.value, 10);
-                
+
                 // Validate the new page size to guard against DOM manipulation
                 if (Number.isNaN(newPerPage) || newPerPage < 10 || newPerPage > 1000) {
                     // Revert the select value to the current perPage if invalid
                     e.target.value = perPage.toString();
                     return;
                 }
-                
+
                 if (newPerPage !== perPage) {
                     perPage = newPerPage;
                     localStorage.setItem('perPage', perPage.toString());
@@ -2003,7 +2099,7 @@
                     await updatePr(prId, e.currentTarget);
                 });
             }
-            
+
             // Re-attach the click event listener to the view raw button
             const viewRawBtn = newRow.querySelector('.view-raw-btn');
             if (viewRawBtn) {
@@ -2293,7 +2389,7 @@
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ 
+                    body: JSON.stringify({
                         pr_url: repoUrl,
                         add_all: true
                     })
@@ -2327,12 +2423,12 @@
         document.querySelectorAll('#themeToggle').forEach(btn => {
             btn.addEventListener('click', toggleTheme);
         });
-        
+
         // Auto-refresh toggle - handle both mobile and desktop buttons
         document.querySelectorAll('#autoRefreshToggle').forEach(btn => {
             btn.addEventListener('click', toggleAutoRefresh);
         });
-        
+
         // Search input - sync both mobile and desktop inputs
         document.querySelectorAll('#prSearchInput').forEach(input => {
             input.addEventListener('input', (e) => {
@@ -2345,7 +2441,7 @@
                     }
                 });
             });
-            
+
             // Allow Enter key to trigger search
             input.addEventListener('keypress', (e) => {
                 if (e.key === 'Enter') {
@@ -2392,7 +2488,7 @@
         const repoDropdownButton = document.getElementById('repoDropdownButton');
         const repoDropdownMenu = document.getElementById('repoDropdownMenu');
         const repoSearchInput = document.getElementById('repoSearchInput');
-        
+
         if (repoDropdownButton && repoDropdownMenu) {
             // Toggle dropdown on button click
             repoDropdownButton.addEventListener('click', (e) => {
@@ -2407,19 +2503,19 @@
                     closeDropdown();
                 }
             });
-            
+
             // Handle search input
             if (repoSearchInput) {
                 repoSearchInput.addEventListener('input', (e) => {
                     updateMobileDropdown(e.target.value);
                 });
-                
+
                 // Prevent dropdown from closing when clicking search input
                 repoSearchInput.addEventListener('click', (e) => {
                     e.stopPropagation();
                 });
             }
-            
+
             // Close dropdown when clicking outside
             document.addEventListener('click', (e) => {
                 if (!repoDropdownButton.contains(e.target) && !repoDropdownMenu.contains(e.target)) {
@@ -2468,14 +2564,14 @@
         document.getElementById('closeRawDataModal').addEventListener('click', hideRawDataModal);
         document.getElementById('closeRawDataModalBtn').addEventListener('click', hideRawDataModal);
         document.getElementById('copyRawDataBtn').addEventListener('click', copyRawDataToClipboard);
-        
+
         // Close modal when clicking outside
         document.getElementById('rawDataModal').addEventListener('click', (e) => {
             if (e.target.id === 'rawDataModal') {
                 hideRawDataModal();
             }
         });
-        
+
         // Close modal on Escape key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
@@ -2548,15 +2644,20 @@
             <div class="space-y-4">
                 <p class="text-sm text-slate-700 leading-relaxed dark:text-slate-300">
                     Leaf is a Readiness and Security PR checker. It reviews pull requests for operational readiness,
-                    security risks, and production-impacting changes before they ship. Inspired by the surge of AI-generated
-                    PRs, Leaf helps teams maintain high standards by adding an automated layer of critical thinking and risk
+                    security risks, and production-impacting changes before they ship. Inspired by the surge of
+                    AI-generated
+                    PRs, Leaf helps teams maintain high standards by adding an automated layer of critical thinking and
+                    risk
                     detection to every change.
                 </p>
                 <p class="text-sm font-medium text-slate-600 dark:text-slate-400">
                     🔒 Security features are coming soon!
                 </p>
                 <div class="pt-2 text-xs text-slate-500 dark:text-slate-500">
-                    <p>Part of the <a href="https://owasp.org/www-project-bug-logging-tool/" target="_blank" rel="noopener noreferrer" class="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">OWASP Bug Logging Tool (BLT)</a> project</p>
+                    <p>Part of the <a href="https://owasp.org/www-project-bug-logging-tool/" target="_blank"
+                            rel="noopener noreferrer"
+                            class="text-red-600 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300">OWASP Bug
+                            Logging Tool (BLT)</a> project</p>
                 </div>
             </div>
         </div>

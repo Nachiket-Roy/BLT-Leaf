@@ -10,6 +10,8 @@ database_id = "014201e7-6c0e-4b6a-8c0e-c53d18305dca"
 
 [vars]
 ENVIRONMENT = "production"
+POSTHOG_API_KEY = "YOUR_POSTHOG_API_KEY"
+POSTHOG_HOST = "https://us.i.posthog.com"
 
 # Configure assets (static files)
 [assets]
